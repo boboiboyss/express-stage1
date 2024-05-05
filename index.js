@@ -38,6 +38,9 @@ app.use(session({
 
 app.use(flash())
 
+
+// https://github.com/boboiboyss/week1/tree/main/task2
+// https://github.com/boboiboyss/express-stage1
 app.get('/', home);
 app.get('/project', project);
 app.post('/project', upload.single('image'), addProject)
@@ -245,7 +248,7 @@ async function addProject(req, res) {
     // const project = await sequelize.query(query, {type :QueryTypes.INSERT});
 
     const getImage = req.file.filename
-    // const userId = req.session.user.id
+    const userId = req.session.user.id
 
     await projectModel.create({
         title : projectName,
@@ -255,10 +258,10 @@ async function addProject(req, res) {
         tech,
         // image : 'https://a.slack-edge.com/9c84081/marketing/img/solutions/tech/png/billboard.png',
         image : getImage,
-        user_id: 6
+        user_id: userId
     })
     
-    // console.log(project);
+    console.log(project);
     res.redirect('/');
     // return project;
 }
