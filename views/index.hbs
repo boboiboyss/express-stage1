@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/1693852aac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/toggle.js"></script>
+    <title>Personal Web</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#">
+          <img src="../assets/img/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          {{#if isLogin}}
+          <li><a href="/project">Add Project</a></li>
+          {{/if}}
+        </ul>
+        <a href="/testimonials" class="testi"> Testimonials </a>
+      </div>
+      <div class="nav-right">
+         {{#if isLogin}}
+          <span class="mr-4">Haii, {{user.name}}</span>
+            <a href="/logout">Logout</a>
+         {{/if}}
+         {{#unless isLogin}}
+          <a href="/register">Register</a>
+          <a href="/login">Login</a>
+         {{/unless}}
+        <a href="/contact-form">Contact Me</a>
+      </div>
+      <div class="icon-hamburger" onclick="toggleElement()">
+        <i class="fa-solid fa-bars fa-2x"></i>
+      </div>
+    </nav>
+
+
+    <div class="menu show" id="toggle">
+      <div class="action-icon">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          {{#if isLogin}}
+          <li><a href="project">Add Project</a></li>
+          {{/if}}
+        </ul>
+        <div class="testi">
+          <a href="/testimonials"> Testimonials </a>
+        </div>
+        <!-- </div> -->
+        <div class="btn-contact">
+          <a href="/contact-form">Contact Me</a>
+        </div>
+      </div>
+    </div>
+
+    {{#if messages.success}}
+      <div class="alert-success"> 
+          {{messages.success}}
+      </div>
+    {{/if}}
+
+    <div class="container">
+      <div class="card">
+        <div class="content-card">
+          <h2 style="font-weight: bold">Hii! Welcome to my profile</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
+            expedita doloremque vel cupiditate! Ipsa, libero aspernatur!
+            Tempore, quos voluptatibus. Quia provident sed natus magni id
+            voluptate dolorum tempore, repellat voluptatum consequuntur
+            expedita, cumque iste consequatur rerum eum ad illo placeat vitae!
+            Dolorum, natus magni voluptatem aliquam ipsa qui dolores aut totam
+            sunt vitae.
+          </p>
+          <!-- <button type="button">contact</button> -->
+          <div class="donwload">
+            <a href="#" class="button">contact</a>
+            <span>donwload CV</span>
+            <a href="../assets/img/foto.jpg" download="cv">
+              <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+          <div class="sosmed">
+            <a href="https://www.linkedin.com/" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="profil">
+          <img src="../assets/img/foto.jpg" alt="foto" />
+          <div class="me">
+            <p style="font-weight: 900">Yan Dwi Boy Simbolon</p>
+            <p>Fullstack Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-project">
+      <p class="title">MY PROJECT</p>
+      <div class="card-container">
+        <div id="card-project">
+          {{#each projects}}
+          <div class="card-content">
+            <img src="/uploads/{{image}}" alt="img" />
+            <a
+              href="/project-detail/{{id}}"
+              style="text-decoration: none; margin: 0; color: black"
+            >
+              <p class="title-content">{{title}}</p>
+            </a>
+            <div class="author" >
+              <p style="margin: 0 0 5px 0; font-size:14px;">{{createdAt}} | {{name}}</p>
+            </div>
+            <small>durasi : {{duration}} </small>
+            <p class="description-content" style="overflow: hidden;">
+              {{description}}
+            </p>
+              {{{react}}}
+              {{{node}}}
+              {{{next}}}
+              {{{ts}}}
+            
+            <div class="action">
+              <div class="button">
+                {{#if ../isLogin }}
+                <a href="/edit-project/{{id}}"><button>edit</button></a>
+                {{/if}}
+              </div>
+              <div class="button">
+                {{#if ../isLogin}}
+                <form onsubmit="deleteProject({{id}})">
+                  <button>delete</button>
+                </form>
+                 {{/if}}
+              </div>
+            </div>
+           
+          </div>
+          {{/each}}
+          </div>
+      </div>
+    </div>
+
+
+      <script src="../assets/js/deleteProject.js"></script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../assets/js/toggle.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1693852aac.js"
+      crossorigin="anonymous"
+    ></script>
+ 
+    <title>My Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/project.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/">
+          <img src="../assets/img/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#" class="active">Add Project</a></li>
+        </ul>
+        <a href="/testimonials" class="testi"> Testimonials </a>
+      </div>
+      <div class="nav-right">
+         {{#if isLogin}}
+          <span class="mr-4">Haii, {{user.name}}</span>
+           <a href="/logout">Logout</a>
+         {{/if}}
+         {{#unless isLogin}}
+          <a href="/register">Register</a>
+          <a href="/login">Login</a>
+         {{/unless}}
+        <a href="/contact-form">Contact Me</a>
+      </div>
+      <div class="icon-hamburger" onclick="toggleElement()">
+        <i class="fa-solid fa-bars fa-2x"></i>
+      </div>
+    </nav>
+
+    <div class="menu" id="toggle">
+      <div class="action-icon">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#" class="active">Add Project</a></li>
+        </ul>
+        <div class="testi">
+          <a href="testimonials"> Testimonials </a>
+        </div>
+        <div class="btn-contact">
+          <a href="contact-form">Contact Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <p>ADD MY PROJECT</p>
+      <form method="post" action="/project" enctype="multipart/form-data">
+        <div class="mb-4">
+          <label for="lproject-name" class="form-label">Project Name</label>
+          <input
+            name="projectName"
+            type="text"
+            id="lproject-name"
+            maxlength="40"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-4 d-flex flex-row justify-content-between">
+          <div>
+            <label for="lstart-date" class="form-label">Start Date</label>
+            <input type="date" id="lstart-date" class="form-control" name="startDate" />
+          </div>
+          <div>
+            <label for="lend-date" style="margin-left: 18px" class="form-label"
+              >End Date</label
+            >
+            <input type="date" id="lend-date" class="form-control" name="endDate" />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="ldescription" class="form-label">Description</label>
+          <textarea
+            id="ldescription"
+            class="form-control"
+            style="height: 100px; resize: none"
+            name="description"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">Technologies</label>
+          <div class="d-flex mb-0">
+            <div
+              class="tech d-flex flex-column mb-0"
+              style="margin-right: 50px"
+            >
+              <div>
+                <input
+                  type="checkbox"
+                  value="Node Js"
+                  name="tech"
+                  class="form-check-input"
+                />
+                <span>Node Js</span>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  value="React Js"
+                  name="tech"
+                  class="form-check-input"
+                />
+                <span>React Js</span>
+              </div>
+            </div>
+            <div class="tech d-flex flex-column mb-0">
+              <div>
+                <input
+                  type="checkbox"
+                  value="Next Js"
+                  name="tech"
+                  class="form-check-input"
+                />
+                <span>Next Js</span>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  value="TypeScript"
+                  name="tech"
+                  class="form-check-input"
+                />
+                <span>TypeScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="upload-image mb-4">
+          <label for="lupload" class="w-100">Upload Image</label>
+          <input
+            type="file"
+            id="lupload"
+            accept="image/png, image/jpeg"
+            class="form-control p-1 w-100"
+            name="image"
+          />
+        </div>
+        <button
+          type="submit"
+          {{!-- onclick="handleProject(event)" --}}
+          class="btn btn-dark px-30"
+        >
+          submit
+        </button>
+      </form>
+    </div>
+
+
+    {{!-- <div class="list-project">
+      <p class="title">MY PROJECT</p>
+      <div class="card-container">
+        <div id="card-project">
+          {{#each data}}
+          <div class="card-content">
+            <img src="{{image}}" alt="img" />
+            <a
+              href="/project/{{@index}}"
+              style="text-decoration: none; margin: 0; color: black"
+            >
+              <p class="title-content">{{title}}</p>
+            </a>
+            <small>durasi : ${listProject[i].duration}</small>
+            <p class="description-content">
+              {{description}}
+            </p>
+            <i class="fa-brands fa-google-play"></i>
+            <i class="fa-brands fa-android"></i>
+            <i class="fa-brands fa-java"></i>
+            <div class="action">
+              <div class="buttton">
+              <a href="/edit-project/{{@index}}"><button>edit</button></a>
+              </div>
+              <div class="button">
+              <form onsubmit="deleteProject({{@index}})">
+              <button>delete</button>
+              </form>
+              </div>
+            </div>
+          </div> --}}
+          {{!-- <div class="card-content">
+            <img src="${listProject[i].image}" alt="img" />
+            <a
+              href="./detail-project.html?id=${i+1}"
+              style="text-decoration: none; margin: 0; color: black"
+            >
+              <p class="title-content">${listProject[i].title}</p>
+            </a>
+            <small>durasi : ${listProject[i].duration}</small>
+            <p class="description-content">
+              ${listProject[i].description.substr(0, 120)}
+            </p>
+            <i class="fa-brands fa-google-play"></i>
+            <i class="fa-brands fa-android"></i>
+            <i class="fa-brands fa-java"></i>
+            <div class="action">
+              <button>edit</button>
+              <button style="margin-left: 3px">delete</button>
+            </div>
+          </div> --}}
+          {{!-- {{/each}} --}}
+        {{!-- </div>
+      </div>
+    </div> --}}
+    <script src="../assets/js/deleteProject.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    {{!-- <script src="../assets/js/project.js"></script> --}}
+  </body>
+</html>

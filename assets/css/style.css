@@ -1,0 +1,389 @@
+body {
+  background-color: #dce0e4;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px 0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.nav-right {
+  margin-right: 50px;
+  /* display: flex; */
+}
+
+.nav-left ul {
+  list-style-type: none;
+  margin: 0px;
+}
+
+.nav-left ul li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+.nav-left ul li a,
+.nav-right a,
+.nav-left a {
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+}
+
+.active {
+  font-weight: bold;
+}
+.nav-right a {
+  padding: 6px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+}
+
+.container {
+  width: 70vw;
+  background-color: white;
+  margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px grey;
+  padding: 20px 10px;
+}
+
+.card {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .content-card {
+  width: 65vw;
+}
+
+.card .content-card p {
+  text-align: justify;
+  padding-right: 40px;
+}
+
+.content-card .donwload,
+.sosmed {
+  margin: 50px 0;
+}
+
+.content-card .donwload span {
+  margin: 0px 15px;
+}
+
+.content-card .donwload .button {
+  padding: 5px 22px;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: white;
+  background-color: #17202a;
+  text-decoration: none;
+}
+
+.content-card .donwload a i {
+  color: black;
+}
+
+.content-card .sosmed a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  padding: 4px 4px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.card .profil {
+  width: 35vw;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 3px 3px 20px grey; */
+  margin-left: 30px;
+}
+
+.card .profil img {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.card .profil .me {
+  text-align: center;
+  padding: 6px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* box-shadow: 3px 3px 20px grey; */
+}
+
+.card .profil .me p {
+  margin: 10px 0 10px 0;
+}
+
+nav .icon-hamburger {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .card .content-card {
+    width: 60vw;
+  }
+
+  .card .profil {
+    width: 40vw;
+    border-radius: 6px;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .card .content-card {
+    width: 50vw;
+  }
+
+  .card .profil {
+    width: 50vw;
+    border-radius: 6px;
+    margin-left: 30px;
+  }
+
+  .card .content-card p {
+    text-align: justify;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 886px) {
+  .card {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card .content-card {
+    width: 50vw;
+  }
+
+  .card .profil {
+    width: 35vw;
+    margin-left: 0px;
+  }
+
+  .content-card .sosmed {
+    text-align: center;
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+
+  nav .icon-hamburger {
+    display: flex;
+    transition: all 1s ease-in-out;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .nav-right {
+    display: none;
+  }
+  .nav-left {
+    margin-left: 20px;
+  }
+
+  .nav-left ul,
+  .nav-left .testi {
+    display: none;
+  }
+
+  .card .profil {
+    width: 40vw;
+    margin: 0 auto;
+  }
+
+  .content-card .sosmed {
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .visible {
+    display: block;
+  }
+  /* .test {
+    display: block;
+  } */
+}
+
+.action-icon {
+  padding: 20px;
+  background-color: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon .btn-contact a {
+  padding: 6px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+  margin: 0px;
+}
+
+.action-icon ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.action-icon ul li {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.action-icon .testi {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.action-icon ul li a,
+.action-icon .testi a {
+  text-decoration: none;
+  margin: 0px;
+  color: black;
+}
+
+.list-project {
+  background-color: white;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.list-project .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 40px;
+}
+
+.card-container {
+  width: 900px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#card-project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+#card-project .card-content {
+  width: 220px;
+  border: 1px solid #dce0e4;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px 5px;
+  height: 370px;
+  margin-bottom: 20px;
+}
+
+.card-content img {
+  width: 100%;
+  border: 1px solid #dce0e4;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 140px;
+  transition: scale 0.4s ease-in-out 0s;
+}
+
+.card-content img:hover {
+  scale: 1.2;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.card-content .title-content {
+  font-size: 15px;
+  font-weight: 670;
+  margin: 10px 0;
+}
+
+.card-content .description-content {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.card-content i {
+  font-size: 18px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.card-content .action {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-content .action button {
+  margin-top: 10px;
+  padding: 5px 25px;
+  background-color: #17202a;
+  color: white;
+  border: 1px solid #17202a;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.alert-success {
+  padding: 20px;
+  font-weight: bold;
+  background-color: #0ba528;
+  width: 100%;
+}
+
+.alert-danger {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #ff5b00;
+  width: 100%;
+}

@@ -1,0 +1,272 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px 0;
+  position: fixed;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.nav-left ul {
+  list-style-type: none;
+  margin: 0px;
+}
+
+.nav-left ul li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+.nav-right {
+  margin-right: 50px;
+}
+.nav-left ul li a,
+.nav-right a,
+.nav-left a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav-right a {
+  padding: 6px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+}
+
+.form-container {
+  background-color: #dce0e4;
+  padding: 40px 0;
+}
+
+.form-container p {
+  text-align: center;
+  font-weight: 800;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.form-container form {
+  width: 350px;
+  margin: 25px auto 50px auto;
+}
+
+/* .form-container form div {
+    margin-bottom: 20px;
+  } */
+
+.form-container form .date {
+  /* float: left;
+    width: 50%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* #lstart-date,
+  #lend-date {
+    width: 90%;
+  } */
+
+/* #lend-date {
+    margin-left: 18px;
+  } */
+
+.form-container form div label {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.date input {
+  width: 85%;
+  padding: 8px;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.project-name input,
+.description textarea {
+  width: 93%;
+  padding: 8px;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.technologies {
+  display: flex;
+  height: 90px;
+}
+
+.technologies input {
+  height: 15px;
+  width: 15px;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.technologies label {
+  position: absolute;
+}
+
+.technologies .tech {
+  margin-top: 30px;
+}
+
+.technologies div > div {
+  display: inline-block;
+}
+
+.description textarea {
+  resize: none;
+  height: 100px;
+}
+
+.upload-image {
+  position: relative;
+}
+
+.upload-image input {
+  width: 93%;
+  padding: 0 16px 0 0;
+  border-radius: 5px;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: transparent;
+}
+
+.upload-image input:focus {
+  color: black;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  border: none;
+  height: 33px;
+  color: #b4b4b4;
+  font-weight: 600;
+  border-radius: 0 5px 5px 0;
+  background-color: #e4e4e4;
+}
+
+form button {
+  float: right;
+  margin: 10px 0;
+  padding: 5px 30px;
+  background-color: #17202a;
+  color: white;
+  border: 1px solid #17202a;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+nav .icon-hamburger {
+  display: none;
+}
+
+.action-icon {
+  padding: 20px;
+  background-color: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon .btn-contact a {
+  padding: 6px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+  margin: 0px;
+}
+
+.action-icon ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.action-icon ul li {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.action-icon .testi {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.action-icon ul li a,
+.action-icon .testi a {
+  text-decoration: none;
+  margin: 0px;
+  color: black;
+}
+
+.menu {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+
+  nav .icon-hamburger {
+    display: flex;
+    transition: all 1s ease-in-out;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .nav-right {
+    display: none;
+  }
+  .nav-left {
+    margin-left: 20px;
+  }
+
+  .nav-left ul,
+  .nav-left .testi {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    position: relative;
+  }
+}

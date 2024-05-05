@@ -1,0 +1,247 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px 0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.nav-left ul {
+  list-style-type: none;
+  margin: 0px;
+}
+
+.nav-left ul li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+.nav-right {
+  margin-right: 50px;
+}
+.nav-left ul li a,
+.nav-right a,
+.nav-left a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav-right a {
+  padding: 6px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+}
+
+nav .icon-hamburger {
+  display: none;
+}
+
+.action-icon {
+  padding: 20px;
+  background-color: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon .btn-contact a {
+  padding: 6px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #17202a;
+  margin: 0px;
+}
+
+.action-icon ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.action-icon ul li {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.action-icon .testi {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.action-icon ul li a,
+.action-icon .testi a {
+  text-decoration: none;
+  margin: 0px;
+  color: black;
+}
+
+.menu {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.container-detail {
+  margin: 20px 50px;
+}
+
+.container-detail .wrapper {
+  display: flex;
+}
+
+.container-detail img {
+  width: 40vw;
+  /* height: 50vh; */
+  margin-rigt: 20px;
+}
+
+.date .time,
+.date .duration {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.date p,
+.tech p {
+  font-weight: 550;
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+.container-detail .tech,
+.container-detail .date {
+  width: 250px;
+  margin: 0 0 40px 40px;
+}
+
+.tech .list-tech {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.tech .list-tech div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.date .time i,
+.date .duration i,
+.list-tech div i {
+  font-size: 25px;
+  width: 25px;
+}
+
+.tech .list-tech div span,
+.date .time span,
+.date .duration span {
+  margin-left: 10px;
+  color: #282929;
+}
+
+.container-detail .desc {
+  display: initial;
+}
+
+.container-detail .desc p {
+  /* float: left; */
+  text-align: justify;
+  margin-top: 40px;
+  color: #282929;
+}
+
+@media only screen and (max-width: 755px) {
+  .container-detail .wrapper {
+    display: block;
+  }
+
+  .container-detail img {
+    width: 80vw;
+    margin-bottom: 20px;
+    /* height: 50vh; */
+    /* margin-rigt: 20px; */
+  }
+
+  .wrapper .right {
+    display: flex;
+  }
+
+  .wrapper .right .date,
+  .wrapper .right .tech {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+
+  .wrapper .right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper .right .date {
+    margin-bottom: 20px;
+  }
+
+  nav .icon-hamburger {
+    display: flex;
+    transition: all 1s ease-in-out;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .nav-right {
+    display: none;
+  }
+  .nav-left {
+    margin-left: 20px;
+  }
+
+  .nav-left ul,
+  .nav-left .testi {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    position: relative;
+  }
+}
